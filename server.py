@@ -15,7 +15,7 @@ PORT = int(os.getenv('PORT', 8000))
 
 mat = np.array([(1,2),(3,2)])
 print mat
-
+print "frgity frag"
 #from flask import Flask
 app = Flask(__name__)
 
