@@ -1,6 +1,8 @@
 import os
 import numpy as np
 import MySQLdb
+from flask import Flask
+
 try:
   from SimpleHTTPServer import SimpleHTTPRequestHandler as Handler
   from SocketServer import TCPServer as Server
@@ -13,6 +15,16 @@ PORT = int(os.getenv('PORT', 8000))
 
 mat = np.array([(1,2),(3,2)])
 print mat
+
+#from flask import Flask
+app = Flask(__name__)
+
+@app.route("/friggi")
+def hello():
+    return "Hello World!"
+
+if __name__ == "__main__":
+    app.run()
 
 # Change current directory to avoid exposure of control files
 os.chdir('static')
