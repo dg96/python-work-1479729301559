@@ -1,5 +1,5 @@
 import os
-import numpy
+import numpy as np
 import MySQLdb
 try:
   from SimpleHTTPServer import SimpleHTTPRequestHandler as Handler
@@ -10,6 +10,10 @@ except ImportError:
 
 # Read port selected by the cloud for our application
 PORT = int(os.getenv('PORT', 8000))
+
+mat = np.matrix([1,2],[3,2])
+print mat
+
 # Change current directory to avoid exposure of control files
 os.chdir('static')
 
